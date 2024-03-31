@@ -44,7 +44,7 @@ For the purposes of a UI, we would also say that a coordinate "object" would als
 
 So assuming a east-west = x and north-south=y, ascending numbering scheme like this:
 
-![alt text](img/alt_grid_valid_numbered.png)
+![alt text](img/table_grid_valid_numbered.png)
 
 We could show = the coordinate (4,7) as 
 
