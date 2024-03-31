@@ -52,4 +52,41 @@ We could show = the coordinate (4,7) as
 | --------------- | ------- | -------- | ----------- |
 | Inside | [1,2,3,4,5,6] | Six-Line | 5:1 |
 
+# Pockets
+
+In order to instantiate the coordinate grid, we may want to start by defining the concept of a "pocket".  Reason being is that a pocket is 1-1 with a result of a spin, whereas the nature of multi-pocket betting options means that a coordinate could be  one-to-many with the actual result of a spin.
+
+Potential attributes of a pocket then could be:
+- Corresponding number of wheel
+- Color
+- Even or odd 
+- Dozen
+- Hi or low 
+
+So for example attributes of the 13 pocket could look like:
+
+| Number | Color | Even-Odd | Dozen | Hi-Lo | 
+| ------ | ----- | -------- | ----- | ----- |
+| 13 | Black | Odd | 2nd 12 | Hi | 
+
+With this scheme, "outside" pockets could be said to represent a list of numbers, but would not be specific to color, Additionally, they would only be specific to even-odd, dozen, or hi-lo if they are in fact those specific pockets (i.e. they are 1 to zero or one with even-odd, dozen, and hi-lo).
+
+Based on this, a potential class-based approach to pockets could be:
+
+- Parent class `Pocket`
+  - `NumberedPocket` inherits from `Pocket`
+  - `OutsidePocket` inherits from `Pocket`
+
+Based on on the one to zero or many relationship of pocket to winning result, a different approach may be to have separate *methods* between outside and inside pockets in order to calculate whether the result of a spin corresponds to a "win" for a given pocket
+
+In theory, this would make outside pockets more reusable because of the inherent *inability* to split/line-bet outside pockets.
+
+So actually, you could have:
+
+- Parent class `Pocket`, which has a grid position attribute corresponding to the "central" grid coordinate for the pocket
+  - Child class `InsidePocket`, which is one-to-one with a number result of a spin 
+  - Child class `OutsidePocket`, which is one-to-many with a number result of a spin 
+
+
+
 
