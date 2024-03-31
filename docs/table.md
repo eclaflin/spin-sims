@@ -19,5 +19,14 @@
 | Line     | 6 numbers, as formed by combining 2 adjacent streets     |
 | Top Line | 5 numbers, as formed by combining the first two rows (i.e. the "zero" row and adjacent) | 
 
+# Grid Implementation
+
+From this understanding of the board and possible coverages of multiple pockets, we can start to form a coordinate-grid to represent every space on the table that a bet can "occupy" (i.e. every option that a player can select).
+
+![alt text](img/table_grid.png)
+
+This creates a grid that is 11 rows by 27 columns (rows and columns assume the table is oriented "east-west", with zero/double-zero positioned on the left side of the frame)
+
+However, within this xy coordinate-grid, not every coordinate will represent a valid position.  In fact, according to the rules there will only be a total of __ valid inputs
 
 
