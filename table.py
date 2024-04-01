@@ -146,5 +146,10 @@ class OutsidePocket(Pocket):
 
         # TODO: validate that type is a valid type and name is valid for the type
         self.outside_type = outside_type 
-        self.name = name 
-  
+        self.name = name
+
+        self.win_function = outside_pocket_meta[outside_type]['win_function']
+    
+    def is_winning(self, spin_result):
+        
+        return self.win_function(spin_result, self.name)
