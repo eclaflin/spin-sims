@@ -94,21 +94,49 @@ def hi_lo_win(spin_result, outside_pocket_hi_lo):
     return True if hi_lo == outside_pocket_hi_lo else return False
 
 def dozen_win(spin_result, outside_pocket_dozen):
-    pass
+    
+    if spin_result < 1:
+        dozen = None 
+
+    elif spin_result <= 12:
+        dozen = 'first'
+
+    elif spin_result <= 24:
+        dozen = 'second'
+
+    else:
+        dozen = 'third'
+
+    return True if doz == outside_pocket_dozen else return False
 
 def two_one_win(spin_result, outside_pocket_row):
+
+    # TODO: figure out how to make this work 
     pass
 
 # types of outside pockets 
 outside_pocket_meta = {
-    'red_black':['red', 'black'],
-    'even_odd':['even', 'odd'], 
-    'hi_lo':['hi', 'lo'],
-    'dozen':['first', 'second', 'third'],
-
-    # 2:1 row bets correspond row-wise to a result 
-    # so in the table grid this integer represents the y coordinate of the inside pocket row
-    'two_one':[2,4,6]
+    'red_black':{
+        'options': ['red', 'black', 'green'], 
+        'win_function': red_or_black_win
+    }, 
+    'even_odd':{
+        'options': ['even', 'odd'], 
+        'win_function': even_odd_win
+    }, 
+    'hi_lo':{
+        'options': ['hi', 'lo'], 
+        'win_function': hi_lo_win
+    },
+    'dozen':{
+        'options':['first', 'second','thid'], 
+        'win_function': dozen_win
+    }, 
+    'two_one':{
+        # these coorespond to y-axis values in board grid
+        'options':[2,4,6], 
+        'win_function': two_won_win
+    }
 }
 
 
