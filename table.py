@@ -50,19 +50,48 @@ red_colors = [
     1,3,5,7,9,12,14,16,18,19,21,23,25,27,30,32,34,36
 ]
 
-
 # define methods for calculating outside bet wins
 # these will be passed as values in the dictionary of 
 # outside bet attributes
 
 def red_or_black_win(spin_result, outside_pocket_color):
-    pass
-            
+
+    if spin_result < 1:
+        spin_color ='green'
+
+    elif spin_result in red_colors:
+        spin_color = 'red'
+
+    else:
+        spin_color 'black'
+
+    return True if spin_color == outside_pocket_color else return False
+
 def even_odd_win(spin_result, outside_pocket_even):
-    pass
+
+    if spin_result < 1:
+        even_odd = None
+
+    elif spin_result % 2 == 0:
+        even_odd ='even' 
+
+    else:
+        even_odd = 'odd'
+
+    return True if even_odd == outside_pocket_even else return False
 
 def hi_lo_win(spin_result, outside_pocket_hi_lo):
-    pass
+    
+    if spin_result < 1:
+        hi_lo = None 
+
+    elif spin_result >= 19:
+        hi_lo = 'hi'
+
+    else:
+        return 'lo'
+
+    return True if hi_lo == outside_pocket_hi_lo else return False
 
 def dozen_win(spin_result, outside_pocket_dozen):
     pass
