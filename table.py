@@ -1,16 +1,3 @@
-
-# types of outside pockets 
-outside_types = {
-    'red_black':['red', 'black'],
-    'even_odd':['even', 'odd'], 
-    'hi_lo':['hi', 'lo'],
-    'dozen':['first', 'second', 'third'],
-
-    # 2:1 row bets correspond row-wise to a result 
-    # so in the table grid this integer represents the y coordinate of the inside pocket row
-    'two_one':[2,4,6]
-}
-
 # parent class of inside and outside pockets
 class Pocket:
     # Takes args corresponding to it's "core" position on the grid
